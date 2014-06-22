@@ -9,7 +9,7 @@ namespace Lotu.Api.Physical
 {
 	public sealed class Location : ICloneable
 	{
-		private readonly World m_World;
+		private readonly IWorld m_World;
 		private readonly long m_X;
 		private readonly long m_Y;
 		private readonly long m_Z;
@@ -22,7 +22,7 @@ namespace Lotu.Api.Physical
 			m_Z = z;
 		}
 
-		public Location(World world, long x, long y, long z)
+		public Location(IWorld world, long x, long y, long z)
 		{
 			m_World = world;
 			m_X = x;
@@ -30,19 +30,19 @@ namespace Lotu.Api.Physical
 			m_Z = z;
 		}
 
-		public Location WithWorld(World world)
+		public Location WithWorld(IWorld world)
 		{
 			return new Location(world, X, Y, Z);
 		}
 
 		public Location Offset(int x, int y, int z)
 		{
-			return new Location(World, X + x, Y + y, Z + z);
+			return new Location(IWorld, X + x, Y + y, Z + z);
 		}
 
 		public Location Clone()
 		{
-			return new Location(World, X, Y, Z);
+			return new Location(IWorld, X, Y, Z);
 		}
 
 		#region ICloneable Members
@@ -54,7 +54,7 @@ namespace Lotu.Api.Physical
 
 		#endregion
 
-		public World World
+		public IWorld World
 		{
 			get
 			{

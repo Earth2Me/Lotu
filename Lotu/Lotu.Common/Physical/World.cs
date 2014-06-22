@@ -4,14 +4,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lotu.Api.Physical.Material;
+using Lotu.Api.Base.Physical.Material;
+using Lotu.Api.Base.Physical.Material.Blocks;
 
-namespace Lotu.Api.Physical
+namespace Lotu.Api.Base.Physical
 {
 	public abstract class World
 	{
-		public event EventHandler<BlockTypeChangingEventArgs> BlockTypeChanging;
-		public event EventHandler<BlockTypeChangedEventArgs> BlockTypeChanged;
+		public event EventHandler<BlockTypeChangingEventArgs> BlockTypeChangingAsync;
+		public event EventHandler<BlockTypeChangedEventArgs> BlockTypeChangedAsync;
 
 		/// <summary>
 		/// Responsible for firing BlockTypeChanging event.  Can cancel.
@@ -19,9 +20,12 @@ namespace Lotu.Api.Physical
 		/// <param name="block">Block that is to be changed, in its pre-change state</param>
 		/// <param name="newType">New type that the block is to receive</param>
 		/// <returns><c>true</c> to continue the event; <c>false</c> to cancel</returns>
-		protected internal bool OnBlockTypeChanging(Block block, BlockType newType)
+		protected internal async Task<bool> OnBlockTypeChangingAsync(Block block, BlockType newType)
 		{
-			var e = Event.Invoke(BlockTypeChanging, "BlockTypeChanging", this, new BlockTypeChangingEventArgs(block, newType));
+			var e = new BlockTypeChangingEventArgs(block, newType);
+
+			await Event.InvokeParallelAsync(BlockTypeChangingAsync, this, e);
+
 			return !e.IsCanceled;
 		}
 
@@ -30,9 +34,9 @@ namespace Lotu.Api.Physical
 		/// </summary>
 		/// <param name="block">Block that is to be changed, in its post-change state</param>
 		/// <param name="oldType">Pre-change type of the block</param>
-		protected internal void OnBlockTypeChanged(Block block, BlockType oldType)
+		protected internal async Task OnBlockTypeChangedAsync(Block block, BlockType oldType)
 		{
-			Event.Invoke(BlockTypeChanged, "BlockTypeChanged", this, new BlockTypeChangedEventArgs(block, oldType));
+			await Event.InvokeParallelAsync(BlockTypeChangedAsync, this, new BlockTypeChangedEventArgs(block, oldType));
 		}
 	}
 }

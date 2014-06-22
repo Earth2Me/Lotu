@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lotu.Api.Physical.Material
+namespace Lotu.Api.Physical.Blocks
 {
 	public class BlockTypeChangedEventArgs : EventArgs
 	{

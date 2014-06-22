@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BD1FE73-910A-4EA5-B10E-BE90A71986BB}</ProjectGuid>
+    <ProjectGuid>{0BE69C98-9817-4F37-B18E-646B56476A69}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lotu.Api</RootNamespace>
-    <AssemblyName>Lotu.Api</AssemblyName>
+    <RootNamespace>Lotu.Core</RootNamespace>
+    <AssemblyName>Lotu.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\OpenTK\1.1\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,18 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event.cs" />
-    <Compile Include="Physical\Blocks\BlockTypeChangedEventArgs.cs" />
-    <Compile Include="Physical\Blocks\BlockTypeChangingEventArgs.cs" />
-    <Compile Include="Physical\Blocks\Formers\IFormer.cs" />
-    <Compile Include="Physical\Blocks\IBlock.cs" />
-    <Compile Include="Physical\Blocks\IBlockType.cs" />
-    <Compile Include="Physical\Blocks\VolumeType.cs" />
-    <Compile Include="Physical\IWorld.cs" />
-    <Compile Include="Physical\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Lotu.Api\Lotu.Api.csproj">
+      <Project>{8bd1fe73-910a-4ea5-b10e-be90a71986bb}</Project>
+      <Name>Lotu.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lotu.Common\Lotu.Common.csproj">
+      <Project>{d468f048-fcc1-448b-bcf0-487d53deddf4}</Project>
+      <Name>Lotu.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

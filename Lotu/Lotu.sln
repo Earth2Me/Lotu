@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.Api", "Lotu.Api\Lotu.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.DebugWrapper", "Lotu.DebugWrapper\Lotu.DebugWrapper.csproj", "{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.Common", "Lotu.Common\Lotu.Common.csproj", "{D468F048-FCC1-448B-BCF0-487D53DEDDF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.Core", "Lotu.Core\Lotu.Core.csproj", "{0BE69C98-9817-4F37-B18E-646B56476A69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D468F048-FCC1-448B-BCF0-487D53DEDDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D468F048-FCC1-448B-BCF0-487D53DEDDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D468F048-FCC1-448B-BCF0-487D53DEDDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D468F048-FCC1-448B-BCF0-487D53DEDDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE69C98-9817-4F37-B18E-646B56476A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE69C98-9817-4F37-B18E-646B56476A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE69C98-9817-4F37-B18E-646B56476A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE69C98-9817-4F37-B18E-646B56476A69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

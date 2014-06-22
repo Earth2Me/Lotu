@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lotu.Api.Physical.Material
+namespace Lotu.Api.Physical.Blocks
 {
-	public delegate void BlockTypeChangingEventHandler(object sender, BlockTypeChangingEventArgs e);
-
-	public class BlockTypeChangingEventArgs
+	public class BlockTypeChangingEventArgs : EventArgs
 	{
 		public Block Block { get; private set; }
 		public BlockType NewBlockType { get; private set; }
-		public bool IsCanceled { get; private set; }
+
+		/// <summary>
+		/// Gets whether the event has been canceled.  Note that this is not guaranteed to be
+		/// accurate when accessed by event handlers.  Avoid relying on this.
+		/// </summary>
+		public volatile bool IsCanceled { get; private set; }
 
 		public BlockTypeChangingEventArgs(Block block, BlockType newBlockType)
 		{

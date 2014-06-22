@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lotu.Api.Physical.Material
+namespace Lotu.Api.Physical.Blocks.Formers
 {
-	public enum VolumeType : uint
+	public interface IFormer
 	{
-		Solitary = 0,
-		Terrain = 1,
 	}
 }
