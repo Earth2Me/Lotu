@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.Engine", "Lotu.Engine\Lotu.Engine.csproj", "{06D8F1A5-644F-4946-8B27-7E8F31F40F03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.Api", "Lotu.Api\Lotu.Api.csproj", "{8BD1FE73-910A-4EA5-B10E-BE90A71986BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotu.DebugWrapper", "Lotu.DebugWrapper\Lotu.DebugWrapper.csproj", "{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06D8F1A5-644F-4946-8B27-7E8F31F40F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D8F1A5-644F-4946-8B27-7E8F31F40F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D8F1A5-644F-4946-8B27-7E8F31F40F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D8F1A5-644F-4946-8B27-7E8F31F40F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BD1FE73-910A-4EA5-B10E-BE90A71986BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD1FE73-910A-4EA5-B10E-BE90A71986BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD1FE73-910A-4EA5-B10E-BE90A71986BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD1FE73-910A-4EA5-B10E-BE90A71986BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309CDFD2-00F9-4C6F-BF23-A61F8DF9A8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
