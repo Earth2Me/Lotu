@@ -8,8 +8,8 @@ namespace Lotu.Api.Physical.Blocks
 {
 	public class BlockTypeChangingEventArgs : EventArgs
 	{
-		public Block Block { get; private set; }
-		public BlockType NewBlockType { get; private set; }
+		public IBlock Block { get; private set; }
+		public IBlockType NewBlockType { get; private set; }
 
 		/// <summary>
 		/// Gets whether the event has been canceled.  Note that this is not guaranteed to be
@@ -17,7 +17,7 @@ namespace Lotu.Api.Physical.Blocks
 		/// </summary>
 		public volatile bool IsCanceled { get; private set; }
 
-		public BlockTypeChangingEventArgs(Block block, BlockType newBlockType)
+		public BlockTypeChangingEventArgs(IBlock block, IBlockType newBlockType)
 		{
 			Block = block;
 			NewBlockType = newBlockType;

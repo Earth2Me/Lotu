@@ -4,8 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lotu.Api.Base.Physical.Material;
-using Lotu.Api.Base.Physical.Material.Blocks;
+using Lotu.Api.Physical.Blocks;
 
 namespace Lotu.Api.Base.Physical
 {
@@ -20,7 +19,7 @@ namespace Lotu.Api.Base.Physical
 		/// <param name="block">Block that is to be changed, in its pre-change state</param>
 		/// <param name="newType">New type that the block is to receive</param>
 		/// <returns><c>true</c> to continue the event; <c>false</c> to cancel</returns>
-		protected internal async Task<bool> OnBlockTypeChangingAsync(Block block, BlockType newType)
+		public async Task<bool> OnBlockTypeChangingAsync(IBlock block, IBlockType newType)
 		{
 			var e = new BlockTypeChangingEventArgs(block, newType);
 
@@ -34,7 +33,7 @@ namespace Lotu.Api.Base.Physical
 		/// </summary>
 		/// <param name="block">Block that is to be changed, in its post-change state</param>
 		/// <param name="oldType">Pre-change type of the block</param>
-		protected internal async Task OnBlockTypeChangedAsync(Block block, BlockType oldType)
+		public async Task OnBlockTypeChangedAsync(IBlock block, IBlockType oldType)
 		{
 			await Event.InvokeParallelAsync(BlockTypeChangedAsync, this, new BlockTypeChangedEventArgs(block, oldType));
 		}

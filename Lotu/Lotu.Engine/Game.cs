@@ -36,7 +36,7 @@ namespace Lotu.Engine
 			Resize += Game_Resize;
 		}
 
-		void Game_Resize(object sender, EventArgs e)
+		private void Game_Resize(object sender, EventArgs e)
 		{
 			Context.Update(WindowInfo);
 
@@ -46,7 +46,7 @@ namespace Lotu.Engine
 			UpdateVertexData();
 		}
 
-		void Game_Load(object sender, EventArgs e)
+		private void Game_Load(object sender, EventArgs e)
 		{
 			UpdateVertexData();
 		}

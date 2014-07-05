@@ -8,10 +8,10 @@ namespace Lotu.Api.Physical.Blocks
 {
 	public class BlockTypeChangedEventArgs : EventArgs
 	{
-		public Block Block { get; private set; }
-		public BlockType OldBlockType { get; private set; }
+		public IBlock Block { get; private set; }
+		public IBlockType OldBlockType { get; private set; }
 
-		public BlockTypeChangedEventArgs(Block block, BlockType oldBlockType)
+		public BlockTypeChangedEventArgs(IBlock block, IBlockType oldBlockType)
 		{
 			Block = block;
 			OldBlockType = oldBlockType;

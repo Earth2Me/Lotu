@@ -37,12 +37,12 @@ namespace Lotu.Api.Physical
 
 		public Location Offset(int x, int y, int z)
 		{
-			return new Location(IWorld, X + x, Y + y, Z + z);
+			return new Location(World, X + x, Y + y, Z + z);
 		}
 
 		public Location Clone()
 		{
-			return new Location(IWorld, X, Y, Z);
+			return new Location(World, X, Y, Z);
 		}
 
 		#region ICloneable Members
